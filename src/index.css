@@ -54,8 +54,13 @@ body {
   max-width: 42rem;
   background-color: var(--color-background-500);
   border-radius: 0.9rem;
-  /* overflow: scroll; */
+  overflow-y: auto;
+  -ms-overflow-style: none;
   position: relative;
+}
+
+.box::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
 }
 
 .loader {
@@ -325,7 +330,7 @@ body {
   aspect-ratio: 1;
   border-radius: 50%;
   border: none;
-  /* background-color: var(--color-text); */
+  background-color: var(--color-text);
   background-color: #fff;
   color: var(--color-background-500);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
