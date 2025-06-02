@@ -8,7 +8,12 @@ const containerStyle = {
 const starContainerStyle = {
   display: "flex",
 };
-function StarRating({ maxRating = 5, color = "#fcc419", size = 48 }) {
+function StarRating({
+  maxRating = 5,
+  color = "#fcc419",
+  size = 48,
+  onSetRating,
+}) {
   const [rating, setRating] = useState(0);
   const [tempRating, setTempRating] = useState(0);
   const textStyle = {
@@ -23,7 +28,10 @@ function StarRating({ maxRating = 5, color = "#fcc419", size = 48 }) {
         {Array.from({ length: maxRating }, (_, i) => (
           <Star
             key={i}
-            onRate={() => setRating(i + 1)}
+            onRate={() => {
+              setRating(i + 1);
+              onSetRating(i + 1);
+            }}
             full={tempRating ? tempRating >= i + 1 : rating >= i + 1}
             onHooverIn={() => setTempRating(i + 1)}
             onHooverOut={() => setTempRating(0)}
