@@ -105,11 +105,13 @@ export default function App() {
       setError("");
       return;
     }
+    handleCloseMovie();
     fetchMovies();
     return function () {
       controller.abort();
     };
   }, [query]);
+
   return (
     <>
       <NavBar>
@@ -190,6 +192,24 @@ function MovieDetails({ selectedId, onClose, onAddWatched, watched }) {
     },
     [movie.Title]
   );
+
+  useEffect(
+    function () {
+      function callback(e) {
+        if (e.code === "Escape") {
+          onClose();
+        }
+      }
+
+      document.addEventListener("keydown", callback);
+
+      return function () {
+        document.removeEventListener("keydown", callback);
+      };
+    },
+    [onClose]
+  );
+
   function handleAdd() {
     const newWatchedMovie = {
       imdbID: selectedId,
