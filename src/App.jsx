@@ -192,7 +192,7 @@ function MovieDetails({ selectedId, onClose, onAddWatched, watched }) {
   );
   useEffect(
     function () {
-      const found = watched.find((w) => w.imdbID === selectedId);
+      const found = watched?.find((w) => w.imdbID === selectedId);
       setInWatchedList(found || {});
     },
     [selectedId, watched]
