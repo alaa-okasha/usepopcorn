@@ -55,8 +55,13 @@ const average = (arr) =>
 export default function App() {
   const [movies, setMovies] = useState(tempMovieData);
   const [watched, setWatched] = useState(() => {
-    const storedValue = localStorage.getItem("watched");
-    return storedValue ? JSON.parse(storedValue) : [];
+    try {
+      const storedValue = localStorage.getItem("watched");
+      const parsed = storedValue ? JSON.parse(storedValue) : [];
+      return Array.isArray(parsed) ? parsed : [];
+    } catch {
+      return [];
+    }
   });
 
   const [isLoading, setIsLoading] = useState(false);
