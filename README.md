@@ -1,12 +1,38 @@
-# React + Vite
+# 🍿 usepopcorn
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React app to search for movies, save them to a "watched" list, and rate them – built with React Hooks and clean component design.
 
-Currently, two official plugins are available:
+## 📸 Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+https://usepopcorn-self-tau.vercel.app/
 
-## Expanding the ESLint configuration
+## ⚡ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- ✅ Search movies using the OMDb API
+- ✅ View detailed movie info
+- ✅ Add movies to a "Watched" list
+- ✅ Rate and review movies
+- ✅ Persistent state with localStorage
+
+## 🚀 Technologies Used
+
+- React
+- React Hooks (useState, useEffect, useReducer, useRef)
+- OMDb API
+- CSS
+- localStorage
+
+## ⚙️ Usage
+
+- Type in a movie title in the search bar.
+
+- Click a result to view details.
+
+- Add it to your watched list and rate it.
+
+- Your watched list is saved in localStorage!
+
+## 🎨 Screenshots
+
+![App Screenshot](up1.png)
+![App Screenshot](up2.png)
