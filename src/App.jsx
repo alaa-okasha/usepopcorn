@@ -95,7 +95,7 @@ export default function App() {
         setError("");
         setIsLoading(true);
         const res = await fetch(
-          `https://cors-anywhere.herokuapp.com/http://www.omdbapi.com/?apikey=${KEY}&s=${query}`,
+          `http://www.omdbapi.com/?apikey=${KEY}&s=${query}`,
           { signal: controller.signal }
         );
         if (!res.ok) {
